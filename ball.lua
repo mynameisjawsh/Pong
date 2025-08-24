@@ -20,6 +20,12 @@ end
 
 function Ball:score()
   if checkGoals(self, Screen) then
+    if self.x + self.width < Screen.x then
+      Arena.ScoreBoard.playerTwoScore = Arena.ScoreBoard.playerTwoScore + 1
+    elseif self.x > Screen.width then
+      Arena.ScoreBoard.playerOneScore = Arena.ScoreBoard.playerOneScore + 1
+    end
+    
     self:load()
   end
 end
