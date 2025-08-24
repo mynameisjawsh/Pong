@@ -15,7 +15,14 @@ end
 
 
 function Paddle:update(dt)
-  self:move(dt)
+  if self.x < Screen.width / 2 then
+    self:moveLeft(dt)
+  end
+  
+  if self.x > Screen.width / 2 then
+    self:moveRight(dt)
+  end
+  
   self:collide()
 end
 
@@ -39,10 +46,19 @@ function Paddle:collide()
 end
 
 
-function Paddle:move(dt)
+function Paddle:moveLeft(dt)
   if love.keyboard.isDown("w") then
     self.y = self.y - self.speed * dt
   elseif love.keyboard.isDown("s") then
+    self.y = self.y + self.speed * dt
+  end
+end
+
+
+function Paddle:moveRight(dt)
+  if love.keyboard.isDown("up") then
+    self.y = self.y - self.speed * dt
+  elseif love.keyboard.isDown("down") then
     self.y = self.y + self.speed * dt
   end
 end
