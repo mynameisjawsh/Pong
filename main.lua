@@ -1,5 +1,7 @@
+require("arena")
+
 function love.load()
-  
+  Arena:load()
 end
 
 
@@ -9,5 +11,5 @@ end
 
 
 function love.draw()
-  
+  Arena:draw()
 end
