@@ -18,6 +18,13 @@ function Arena:load()
     y = Screen.height / 2,
     radius = 100
   }
+  self.ScoreBoard = {
+    font = love.graphics.newFont(64),
+    x = 300,
+    y = 100,
+    playerOneScore = 0,
+    playerTwoScore = 0
+  }
 end
 
 
@@ -30,4 +37,9 @@ function Arena:draw()
   love.graphics.rectangle("fill", self.Divider.x - 5, self.Divider.y, self.Divider.width, self.Divider.height)
   
   love.graphics.circle("line", self.Center.x, self.Center.y, self.Center.radius)
+  
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.setFont(self.ScoreBoard.font)
+  love.graphics.print(self.ScoreBoard.playerOneScore, self.ScoreBoard.x, self.ScoreBoard.y)
+  love.graphics.print(self.ScoreBoard.playerTwoScore, Screen.width - (self.ScoreBoard.x + 50), self.ScoreBoard.y)
 end
