@@ -1,11 +1,16 @@
 Paddle = {}
 
-function Paddle:load()
-  self.x = 50
-  self.y = Screen.height / 2
-  self.width = 20
-  self.height = 100
-  self.speed = 500
+local paddle_mt = { __index = Paddle }
+
+function Paddle.new(x, y, width, height, speed)
+  local instance = {}
+  instance.x = x
+  instance.y = y
+  instance.width = width
+  instance.height = height
+  instance.speed = speed
+  
+  return setmetatable(instance, paddle_mt)
 end
 
 

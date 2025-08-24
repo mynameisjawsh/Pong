@@ -26,12 +26,14 @@ end
 
 
 function Ball:collide()
-  if checkPaddle(self, Paddle) then
-    self.xVel = -self.xVel
-    local middleBall = self.y + self.height / 2
-    local middlePaddle = Paddle.y + Paddle.height / 2
-    local collisionPosition = middleBall - middlePaddle
-    self.yVel = collisionPosition * 5
+  for Paddle, Paddle in ipairs(Paddle) do
+    if checkPaddle(self, Paddle) then
+      self.xVel = -self.xVel
+      local middleBall = self.y + self.height / 2
+      local middlePaddle = Paddle.y + Paddle.height / 2
+      local collisionPosition = middleBall - middlePaddle
+      self.yVel = collisionPosition * 5
+    end
   end
   
   if checkCeiling(self, Screen) then
