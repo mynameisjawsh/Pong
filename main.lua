@@ -1,6 +1,8 @@
 require("arena")
 require("paddle")
 
+require("collisions")
+
 Screen = {}
 Screen.x = 0
 Screen.y = 0

@@ -15,6 +15,14 @@ function Paddle:update(dt)
   elseif love.keyboard.isDown("s") then
     self.y = self.y + self.speed * dt
   end
+  
+  if checkCeiling(self, Screen) then
+    self.y = Screen.y
+  end
+  
+  if checkFloor(self, Screen) then
+    self.y = Screen.height - self.height
+  end
 end
 
 
