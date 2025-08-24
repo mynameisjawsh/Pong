@@ -1,5 +1,6 @@
 require("arena")
 require("paddle")
+require("ball")
 
 require("collisions")
 
@@ -12,15 +13,18 @@ Screen.height = love.graphics.getHeight()
 function love.load()
   Arena:load()
   Paddle:load()
+  Ball:load()
 end
 
 
 function love.update(dt)
   Paddle:update(dt)
+  Ball:update(dt)
 end
 
 
 function love.draw()
   Arena:draw()
   Paddle:draw()
+  Ball:draw()
 end
