@@ -22,6 +22,14 @@ function Ball:update(dt)
     local collisionPosition = middleBall - middlePaddle
     self.yVel = collisionPosition * 5
   end
+  
+  if checkCeiling(self, Screen) then
+    self.yVel = -self.yVel
+  end
+  
+  if checkFloor(self, Screen) then
+    self.yVel = -self.yVel
+  end
 end
 
 
