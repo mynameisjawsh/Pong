@@ -12,9 +12,20 @@ end
 
 
 function Ball:update(dt)
-  self.x = self.x + self.xVel * dt
-  self.y = self.y + self.yVel * dt
-  
+  self:move(dt)
+  self:collide()
+  self:score()
+end
+
+
+function Ball:score()
+  if checkGoals(self, Screen) then
+    self:load()
+  end
+end
+
+
+function Ball:collide()
   if checkPaddle(self, Paddle) then
     self.xVel = -self.xVel
     local middleBall = self.y + self.height / 2
@@ -30,10 +41,12 @@ function Ball:update(dt)
   if checkFloor(self, Screen) then
     self.yVel = -self.yVel
   end
-  
-  if checkGoals(self, Screen) then
-    self:load()
-  end
+end
+
+
+function Ball:move(dt)
+  self.x = self.x + self.xVel * dt
+  self.y = self.y + self.yVel * dt
 end
 
 
