@@ -1,6 +1,7 @@
 require("arena")
 require("paddle")
 require("ball")
+require("button")
 
 require("collisions")
 require("statemanager")
@@ -27,6 +28,7 @@ function love.load()
     Ball:load()
   elseif GameState.gameOver then
     GameOver:load()
+    Button:load()
   end
 end
 
@@ -41,6 +43,7 @@ function love.update(dt)
     Ball:update(dt)
   elseif GameState.gameOver then
     GameOver:update()
+    Button:update()
   end
 end
 
@@ -55,5 +58,6 @@ function love.draw()
     Ball:draw()
   elseif GameState.gameOver then
     GameOver:draw()
+    Button:draw()
   end
 end
