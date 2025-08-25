@@ -3,6 +3,7 @@ require("paddle")
 require("ball")
 
 require("collisions")
+require("statemanager")
 
 GameState = {}
 GameState.play = true
@@ -27,6 +28,8 @@ end
 
 
 function love.update(dt)
+  StateManager:manageStates()
+  
   if GameState.play then
     playerOne:update(dt)
     playerTwo:update(dt)
