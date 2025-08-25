@@ -23,7 +23,7 @@ function Arena:load()
     x = 300,
     y = 100,
     playerOneScore = 0,
-    playerTwoScore = 9
+    playerTwoScore = 0
   }
 end
 
