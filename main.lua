@@ -4,6 +4,10 @@ require("ball")
 
 require("collisions")
 
+GameState = {}
+GameState.play = true
+GameState.gameOver = false
+
 Screen = {}
 Screen.x = 0
 Screen.y = 0
