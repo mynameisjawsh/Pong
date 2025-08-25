@@ -13,7 +13,11 @@ end
 
 
 function GameOver:update()
-  
+  if Arena.ScoreBoard.playerOneScore > Arena.ScoreBoard.playerTwoScore then
+    self.Message.text = "Player One Wins!"
+  elseif Arena.ScoreBoard.playerOneScore < Arena.ScoreBoard.playerTwoScore then
+    self.Message.text = "Player Two Wins!"
+  end
 end
 
 
