@@ -15,11 +15,6 @@ function Button.new(font, text, x, y, width, height)
 end
 
 
-function Button:update()
-  
-end
-
-
 function Button:draw()
   love.graphics.setColor(1, 1, 1)
   love.graphics.rectangle("fill", self.x - 112.5, self.y, self.width, self.height)
