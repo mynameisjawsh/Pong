@@ -1,11 +1,11 @@
 Paddle = {}
 
-function Paddle:load()
-  self.x = 50
-  self.y = Screen.height / 2
-  self.width = 20
-  self.height = 100
-  self.speed = 500
+function Paddle.new(x, y, width, height, speed)
+  Paddle.x = x
+  Paddle.y = y
+  Paddle.width = width
+  Paddle.height = height
+  Paddle.speed = speed
 end
 
 

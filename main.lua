@@ -12,7 +12,9 @@ Screen.height = love.graphics.getHeight()
 
 function love.load()
   Arena:load()
-  Paddle:load()
+  
+  Paddle.new(50, Screen.height / 2, 20, 100, 500)
+  
   Ball:load()
 end
 
