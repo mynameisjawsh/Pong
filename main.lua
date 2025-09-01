@@ -23,6 +23,9 @@ GameState.gameOver = false
 function love.load()
   if GameState.boot then
     Start:load()
+    
+    PlayButton = Button.new(love.graphics.newFont(64), "Play", Screen.width / 2, Screen.height / 2, 225, 75)
+    ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
   elseif GameState.play then
     Arena:load()
     
@@ -55,6 +58,8 @@ end
 function love.draw()
   if GameState.boot then
     Start:draw()
+    PlayButton:draw()
+    ExitButton:draw()
   elseif GameState.play then
     Arena:draw()
     player1:draw()
@@ -69,12 +74,28 @@ end
 
 
 function love.mousepressed(x, y, mouseButton)
+  if GameState.boot then
+    if mouseButton == 1 then
+      
+      if x >= PlayButton.x - 112.5 and x <= PlayButton.x - 112.5 + PlayButton.width and y >= PlayButton.y and y <= PlayButton.y + PlayButton.height then
+        play()
+      end
+      
+    end
+  end
+  
   if GameState.gameOver then
     if mouseButton == 1 then
       
       if x >= RetryButton.x - 112.5 and x <= RetryButton.x - 112.5 + RetryButton.width and y >= RetryButton.y and y <= RetryButton.y + RetryButton.height then
         retry()
       end
+      
+    end
+  end
+  
+  if not GameState.play then
+    if mouseButton == 1 then
       
       if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
         love.event.quit()
