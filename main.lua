@@ -16,8 +16,6 @@ GameState.play = true
 GameState.gameOver = false
 
 function love.load()
-  checkState()
-  
   if GameState.play then
     Arena:load()
     

@@ -39,6 +39,8 @@ function Ball:score()
   elseif self.x > Screen.x + Screen.width then
     ScoreBoard.playerOneScore = ScoreBoard.playerOneScore + 1
   end
+  
+  checkState()
 end
 
 
