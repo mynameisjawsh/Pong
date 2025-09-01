@@ -13,20 +13,23 @@ Screen.height = love.graphics.getHeight()
 function love.load()
   Arena:load()
   
-  Paddle.new(50, Screen.height / 2, 20, 100, 500)
+  player1 = Paddle.new(50, Screen.height / 2, 20, 100, 500, 1)
+  player2 = Paddle.new(Screen.width - 70, Screen.height / 2, 20, 100, 500, 2)
   
   Ball:load()
 end
 
 
 function love.update(dt)
-  Paddle:update(dt)
+  player1:update(dt)
+  player2:update(dt)
   Ball:update(dt)
 end
 
 
 function love.draw()
   Arena:draw()
-  Paddle:draw()
+  player1:draw()
+  player2:draw()
   Ball:draw()
 end

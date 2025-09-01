@@ -1,11 +1,17 @@
 Paddle = {}
 
-function Paddle.new(x, y, width, height, speed)
-  Paddle.x = x
-  Paddle.y = y
-  Paddle.width = width
-  Paddle.height = height
-  Paddle.speed = speed
+function Paddle.new(x, y, width, height, speed, player)
+  local instance = {}
+  setmetatable(instance, { __index = Paddle })
+  
+  instance.x = x
+  instance.y = y
+  instance.width = width
+  instance.height = height
+  instance.speed = speed
+  instance.player = player
+  
+  return instance
 end
 
 
@@ -22,6 +28,14 @@ function Paddle:collide()
   
   if checkFloor(self, Screen) then
     self.y = Screen.height - self.height
+  end
+  
+  if checkPaddle(self, Ball) then
+    Ball.xVel = -Ball.xVel
+    local middleBall = Ball.y + Ball.height / 2
+    local middlePaddle = self.y + self.height / 2
+    local collisionPosition = middleBall - middlePaddle
+    Ball.yVel = collisionPosition * 5
   end
 end
 
