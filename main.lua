@@ -1,6 +1,7 @@
 require("statehandler")
 require("collisions")
 
+require("start")
 require("gameover")
 
 require("arena")
@@ -20,7 +21,9 @@ GameState.play = false
 GameState.gameOver = false
 
 function love.load()
-  if GameState.play then
+  if GameState.boot then
+    Start:load()
+  elseif GameState.play then
     Arena:load()
     
     player1 = Paddle.new(50, Screen.height / 2, 20, 100, 500, 1)
@@ -37,7 +40,9 @@ end
 
 
 function love.update(dt)
-  if GameState.play then
+  if GameState.boot then
+    Start:update()
+  elseif GameState.play then
     player1:update(dt)
     player2:update(dt)
     Ball:update(dt)
@@ -48,7 +53,9 @@ end
 
 
 function love.draw()
-  if GameState.play then
+  if GameState.boot then
+    Start:draw()
+  elseif GameState.play then
     Arena:draw()
     player1:draw()
     player2:draw()
