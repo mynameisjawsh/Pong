@@ -28,6 +28,8 @@ function love.load()
     Ball:load()
   else
     GameOver:load()
+    
+    RetryButton = Button.new(love.graphics.newFont(64), "Retry", Screen.width / 2, Screen.height / 2, 225, 75)
   end
 end
 
@@ -39,6 +41,7 @@ function love.update(dt)
     Ball:update(dt)
   else
     GameOver:update()
+    RetryButton:update()
   end
 end
 
@@ -51,5 +54,6 @@ function love.draw()
     Ball:draw()
   else
     GameOver:draw()
+    RetryButton:draw()
   end
 end

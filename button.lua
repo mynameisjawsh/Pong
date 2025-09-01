@@ -1,13 +1,17 @@
 Button = {}
 
-function Button:load()
-  self.font = love.graphics.newFont(64)
-  self.text = "button"
-  self.x = Screen.width / 2
-  self.y = Screen.height / 2
-  self.width = 225
-  self.height = 75
-  self.xOffset = self.width / 2
+function Button.new(font, text, x, y, width, height)
+  local instance = {}
+  setmetatable(instance, { __index = Button })
+  
+  instance.font = font
+  instance.text = text
+  instance.x = x
+  instance.y = y
+  instance.width = width
+  instance.height = height
+  
+  return instance
 end
 
 
@@ -18,9 +22,9 @@ end
 
 function Button:draw()
   love.graphics.setColor(1, 1, 1)
-  love.graphics.rectangle("fill", self.x - self.xOffset, self.y, self.width, self.height)
+  love.graphics.rectangle("fill", self.x - 112.5, self.y, self.width, self.height)
   
   love.graphics.setColor(0, 0, 0)
   love.graphics.setFont(self.font)
-  love.graphics.print(self.text, self.x - self.xOffset, self.y)
+  love.graphics.print(self.text, self.x - 112.5, self.y)
 end

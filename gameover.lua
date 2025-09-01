@@ -7,8 +7,6 @@ function GameOver:load()
     x = 100,
     y = 100
   }
-  
-  Button:load()
 end
 
 
@@ -18,8 +16,6 @@ function GameOver:update()
   else
     Message.text = "Player Two wins!"
   end
-  
-  Button:update()
 end
 
 
@@ -27,6 +23,4 @@ function GameOver:draw()
   love.graphics.setColor(1, 1, 1)
   love.graphics.setFont(Message.font)
   love.graphics.print(Message.text, Message.x, Message.y)
-  
-  Button:draw()
 end
