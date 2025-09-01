@@ -41,10 +41,20 @@ end
 
 
 function Paddle:move(dt)
-  if love.keyboard.isDown("w") then
-    self.y = self.y - self.speed * dt
-  elseif love.keyboard.isDown("s") then
-    self.y = self.y + self.speed * dt
+  if self.player == 1 then
+    if love.keyboard.isDown("w") then
+      self.y = self.y - self.speed * dt
+    elseif love.keyboard.isDown("s") then
+      self.y = self.y + self.speed * dt
+    end
+  end
+  
+  if self.player == 2 then
+    if love.keyboard.isDown("up") then
+      self.y = self.y - self.speed * dt
+    elseif love.keyboard.isDown("down") then
+      self.y = self.y + self.speed * dt
+    end
   end
 end
 
