@@ -65,7 +65,7 @@ function love.mousepressed(x, y, mouseButton)
     if mouseButton == 1 then
       
       if x >= RetryButton.x - 112.5 and x <= RetryButton.x - 112.5 + RetryButton.width and y >= RetryButton.y and y <= RetryButton.y + RetryButton.height then
-        print("retry")
+        retry()
       end
       
       if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then

@@ -1,7 +1,16 @@
 function checkState()
-  if ScoreBoard.playerOneScore >= 10 or ScoreBoard.playerTwoScore >= 10 then
+  if GameState.play and ScoreBoard.playerOneScore >= 10 or ScoreBoard.playerTwoScore >= 10 then
     GameState.play = false
     GameState.gameOver = true
+    love.load()
+  end
+end
+
+
+function retry()
+  if GameState.gameOver then
+    GameState.gameOver = false
+    GameState.play = true
     love.load()
   end
 end
