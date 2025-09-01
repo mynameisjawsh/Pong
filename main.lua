@@ -1,6 +1,9 @@
 require("arena")
 require("paddle")
 
+screenWidth = love.graphics.getWidth()
+screenHeight = love.graphics.getHeight()
+
 function love.load()
   Arena:load()
   Paddle:load()

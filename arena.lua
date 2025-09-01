@@ -5,17 +5,17 @@ function Arena:load()
     x = 0,
     y = 0,
     width = 30,
-    height = love.graphics.getHeight()
+    height = screenHeight
   }
   Divider = {
-    x = love.graphics.getWidth() / 2,
+    x = screenWidth / 2,
     y = 0,
     width = 10,
-    height = love.graphics.getHeight()
+    height = screenHeight
   }
   Center = {
-    x = love.graphics.getWidth() / 2,
-    y = love.graphics.getHeight() / 2,
+    x = screenWidth / 2,
+    y = screenHeight / 2,
     radius = 100
   }
 end
@@ -24,7 +24,7 @@ end
 function Arena:draw()
   love.graphics.setColor(0, 1, 0)
   love.graphics.rectangle("fill", Goal.x, Goal.y, Goal.width, Goal.height)
-  love.graphics.rectangle("fill", love.graphics.getWidth() - Goal.width, Goal.y, Goal.width, Goal.height)
+  love.graphics.rectangle("fill", screenWidth - Goal.width, Goal.y, Goal.width, Goal.height)
   
   love.graphics.setColor(0.5, 0.5, 0.5)
   love.graphics.rectangle("fill", Divider.x - 5, Divider.y, Divider.width, Divider.height)
