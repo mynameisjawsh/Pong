@@ -24,6 +24,7 @@ end
 
 
 function GameOver:draw()
+  love.graphics.setColor(1, 1, 1)
   love.graphics.setFont(Message.font)
   love.graphics.print(Message.text, Message.x, Message.y)
   
