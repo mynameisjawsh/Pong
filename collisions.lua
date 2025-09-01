@@ -23,3 +23,12 @@ function checkPaddle(a, b)
     return false
   end
 end
+
+
+function checkGoal(a, b)
+  if a.x + a.width < b.x or a.x > b.x + b.width then
+    return true
+  else
+    return false
+  end
+end
