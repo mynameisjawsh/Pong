@@ -1,5 +1,5 @@
 function checkCeiling(a, b)
-  if a.x < b.x then
+  if a.y < b.y then
     return true
   else
     return false
@@ -8,7 +8,7 @@ end
 
 
 function checkFloor(a, b)
-  if a.y + a.height  > b.height then
+  if a.y + a.height > b.height then
     return true
   else
     return false
