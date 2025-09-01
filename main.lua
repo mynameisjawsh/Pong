@@ -69,7 +69,7 @@ function love.mousepressed(x, y, mouseButton)
       end
       
       if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
-        print("exit")
+        love.event.quit()
       end
       
     end
