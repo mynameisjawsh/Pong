@@ -6,6 +6,7 @@ require("gameover")
 require("arena")
 require("paddle")
 require("ball")
+require("button")
 
 Screen = {}
 Screen.x = 0
