@@ -30,6 +30,10 @@ function Ball:update(dt)
   if checkFloor(self, Screen) then
     self.yVel = -self.yVel
   end
+  
+  if checkGoal(self, Screen) then
+    self:load()
+  end
 end
 
 
