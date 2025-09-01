@@ -27,7 +27,17 @@ function Ball:collide()
   end
   
   if checkGoal(self, Screen) then
+    self:score()
     self:load()
+  end
+end
+
+
+function Ball:score()
+  if self.x + self.width < Screen.x then
+    ScoreBoard.playerTwoScore = ScoreBoard.playerTwoScore + 1
+  elseif self.x > Screen.x + Screen.width then
+    ScoreBoard.playerOneScore = ScoreBoard.playerOneScore + 1
   end
 end
 
