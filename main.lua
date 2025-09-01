@@ -1,3 +1,4 @@
+require("statehandler")
 require("collisions")
 
 require("arena")
@@ -15,6 +16,8 @@ GameState.play = true
 GameState.gameOver = false
 
 function love.load()
+  checkState()
+  
   if GameState.play then
     Arena:load()
     
