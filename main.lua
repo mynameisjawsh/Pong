@@ -1,5 +1,6 @@
 require("statehandler")
 require("collisions")
+require("sound")
 
 require("start")
 require("modeselect")
@@ -27,6 +28,8 @@ GameMode.singlePlayer = false
 GameMode.multiPlayer = false
 
 function love.load()
+  Sound:load()
+  
   if GameState.boot then
     Start:load()
     
@@ -54,6 +57,8 @@ end
 
 
 function love.update(dt)
+  Sound:update()
+  
   if GameState.boot then
     Start:update()
   elseif GameState.modeSelect then
