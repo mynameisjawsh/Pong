@@ -49,7 +49,7 @@ function Paddle:move(dt)
     end
   end
   
-  if self.player == 2 then
+  if self.player == 2 and GameMode.multiPlayer then
     if love.keyboard.isDown("up") then
       self.y = self.y - self.speed * dt
     elseif love.keyboard.isDown("down") then
