@@ -12,3 +12,9 @@ end
 function Sound:update()
   
 end
+
+
+function Sound:clickButton()
+  love.audio.stop()
+  love.audio.play(self.ClickButton)
+end

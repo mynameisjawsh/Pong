@@ -101,23 +101,27 @@ function love.mousepressed(x, y, mouseButton)
     if GameState.boot then
       
       if x >= PlayButton.x - 112.5 and x <= PlayButton.x - 112.5 + PlayButton.width and y >= PlayButton.y and y <= PlayButton.y + PlayButton.height then
+        Sound:clickButton()
         modeSelect()
       end
     elseif GameState.modeSelect then
       
       if x >= SinglePlayerButton.x - 112.5 and x <= SinglePlayerButton.x - 112.5 + SinglePlayerButton.width and y >= SinglePlayerButton.y and y <= SinglePlayerButton.y + SinglePlayerButton.height then
         GameMode.singlePlayer = true
+        Sound:clickButton()
         play()
       end
       
       if x >= MultiPlayerButton.x - 112.5 and x <= MultiPlayerButton.x - 112.5 + MultiPlayerButton.width and y >= MultiPlayerButton.y and y <= MultiPlayerButton.y +
 MultiPlayerButton.height then
         GameMode.multiPlayer = true
+        Sound:clickButton()
         play()
       end
     elseif GameState.gameOver then
       
       if x >= RetryButton.x - 112.5 and x <= RetryButton.x - 112.5 + RetryButton.width and y >= RetryButton.y and y <= RetryButton.y + RetryButton.height then
+        Sound:clickButton()
         retry()
       end
     end
