@@ -2,6 +2,7 @@ require("statehandler")
 require("collisions")
 
 require("start")
+require("modeselect")
 require("gameover")
 
 require("arena")
@@ -31,6 +32,8 @@ function love.load()
     
     PlayButton = Button.new(love.graphics.newFont(64), "Play", Screen.width / 2, Screen.height / 2, 225, 75)
     ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
+  elseif GameState.modeSelect then
+    ModeSelect:load()
   elseif GameState.play then
     Arena:load()
     
@@ -50,6 +53,8 @@ end
 function love.update(dt)
   if GameState.boot then
     Start:update()
+  elseif GameState.modeSelect then
+    ModeSelect:update()
   elseif GameState.play then
     player1:update(dt)
     player2:update(dt)
@@ -65,6 +70,8 @@ function love.draw()
     Start:draw()
     PlayButton:draw()
     ExitButton:draw()
+  elseif GameState.modeSelect then
+    ModeSelect:draw()
   elseif GameState.play then
     Arena:draw()
     player1:draw()
