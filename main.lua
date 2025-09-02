@@ -34,6 +34,9 @@ function love.load()
     ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
   elseif GameState.modeSelect then
     ModeSelect:load()
+    
+    SinglePlayerButton = Button.new(love.graphics.newFont(52), "1 Player", Screen.width / 2, Screen.height / 2, 225, 75)
+    MultiPlayerButton = Button.new(love.graphics.newFont(52), "2 Player", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
   elseif GameState.play then
     Arena:load()
     
@@ -72,6 +75,8 @@ function love.draw()
     ExitButton:draw()
   elseif GameState.modeSelect then
     ModeSelect:draw()
+    SinglePlayerButton:draw()
+    MultiPlayerButton:draw()
   elseif GameState.play then
     Arena:draw()
     player1:draw()
@@ -106,7 +111,7 @@ function love.mousepressed(x, y, mouseButton)
     end
   end
   
-  if not GameState.play then
+  if not GameState.play and not GameState.modeSelect then
     if mouseButton == 1 then
       
       if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
