@@ -90,7 +90,7 @@ function love.mousepressed(x, y, mouseButton)
     if mouseButton == 1 then
       
       if x >= PlayButton.x - 112.5 and x <= PlayButton.x - 112.5 + PlayButton.width and y >= PlayButton.y and y <= PlayButton.y + PlayButton.height then
-        play()
+        modeSelect()
       end
       
     end

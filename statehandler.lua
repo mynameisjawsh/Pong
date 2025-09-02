@@ -23,3 +23,12 @@ function play()
     love.load()
   end
 end
+
+
+function modeSelect()
+  if GameState.boot then
+    GameState.boot = false
+    GameState.modeSelect = true
+    love.load()
+  end
+end
