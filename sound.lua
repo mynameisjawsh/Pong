@@ -31,6 +31,25 @@ function Sound:update()
     love.audio.stop()
     love.audio.play(self.HitFloor)
   end
+  
+  if checkGoal(Ball, Screen) then
+    if GameMode.multiPlayer then
+      love.audio.stop()
+      love.audio.play(self.Goal1)
+    end
+    
+    if GameMode.singlePlayer then
+      love.audio.stop()
+      
+      if Ball.x + Ball.width < Screen.x then
+        love.audio.play(self.Goal2)
+      elseif Ball.x > Screen.x + Screen.width then
+        love.audio.play(self.Goal1)
+      end
+    end
+    
+    Ball:load()
+  end
 end
 
 
