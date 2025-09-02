@@ -17,6 +17,7 @@ Screen.height = love.graphics.getHeight()
 
 GameState = {}
 GameState.boot = true
+GameState.modeSelect = false
 GameState.play = false
 GameState.gameOver = false
 
