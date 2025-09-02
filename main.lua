@@ -57,8 +57,6 @@ end
 
 
 function love.update(dt)
-  Sound:update()
-  
   if GameState.boot then
     Start:update()
   elseif GameState.modeSelect then
@@ -67,6 +65,7 @@ function love.update(dt)
     player1:update(dt)
     player2:update(dt)
     Ball:update(dt)
+    Sound:update()
   else
     GameOver:update()
   end

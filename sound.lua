@@ -10,7 +10,10 @@ end
 
 
 function Sound:update()
-  
+  if checkPaddle(player1, Ball) then
+    love.audio.stop()
+    love.audio.play(self.HitPaddle1)
+  end
 end
 
 
