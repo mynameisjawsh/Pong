@@ -24,6 +24,11 @@ function Sound:update()
     love.audio.stop()
     love.audio.play(self.HitCeiling)
   end
+  
+  if checkFloor(Ball, Screen) then
+    love.audio.stop()
+    love.audio.play(self.HitFloor)
+  end
 end
 
 
