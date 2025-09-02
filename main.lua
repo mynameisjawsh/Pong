@@ -20,6 +20,10 @@ GameState.boot = true
 GameState.play = false
 GameState.gameOver = false
 
+GameMode = {}
+GameMode.singlePlayer = false
+GameMode.multiPlayer = false
+
 function love.load()
   if GameState.boot then
     Start:load()
