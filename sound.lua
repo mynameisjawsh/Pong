@@ -6,6 +6,8 @@ function Sound:load()
   self.HitCeiling = love.audio.newSource("Assets/Sounds/Exports/HitCeiling.wav", "static")
   self.HitFloor = love.audio.newSource("Assets/Sounds/Exports/HitFloor.wav", "static")
   self.ClickButton = love.audio.newSource("Assets/Sounds/Exports/ClickButton.wav", "static")
+  self.Goal1 = love.audio.newSource("Assets/Sounds/Exports/Goal1.wav", "static")
+  self.Goal2 = love.audio.newSource("Assets/Sounds/Exports/Goal2.wav", "static")
 end
 
 
