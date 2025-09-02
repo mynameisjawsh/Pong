@@ -28,7 +28,6 @@ function Ball:collide()
   
   if checkGoal(self, Screen) then
     self:score()
-    self:load()
   end
 end
 

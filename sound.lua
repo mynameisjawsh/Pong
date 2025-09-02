@@ -6,6 +6,8 @@ function Sound:load()
   self.HitCeiling = love.audio.newSource("Assets/Sounds/Exports/HitCeiling.wav", "static")
   self.HitFloor = love.audio.newSource("Assets/Sounds/Exports/HitFloor.wav", "static")
   self.ClickButton = love.audio.newSource("Assets/Sounds/Exports/ClickButton.wav", "static")
+  self.Goal1 = love.audio.newSource("Assets/Sounds/Exports/Goal1.wav", "static")
+  self.Goal2 = love.audio.newSource("Assets/Sounds/Exports/Goal2.wav", "static")
 end
 
 
@@ -28,6 +30,25 @@ function Sound:update()
   if checkFloor(Ball, Screen) then
     love.audio.stop()
     love.audio.play(self.HitFloor)
+  end
+  
+  if checkGoal(Ball, Screen) then
+    if GameMode.multiPlayer then
+      love.audio.stop()
+      love.audio.play(self.Goal1)
+    end
+    
+    if GameMode.singlePlayer then
+      love.audio.stop()
+      
+      if Ball.x + Ball.width < Screen.x then
+        love.audio.play(self.Goal2)
+      elseif Ball.x > Screen.x + Screen.width then
+        love.audio.play(self.Goal1)
+      end
+    end
+    
+    Ball:load()
   end
 end
 
