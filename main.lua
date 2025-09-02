@@ -91,33 +91,39 @@ end
 
 
 function love.mousepressed(x, y, mouseButton)
-  if GameState.boot then
-    if mouseButton == 1 then
+  if mouseButton == 1 then
+    
+    if GameState.boot then
       
       if x >= PlayButton.x - 112.5 and x <= PlayButton.x - 112.5 + PlayButton.width and y >= PlayButton.y and y <= PlayButton.y + PlayButton.height then
         modeSelect()
       end
+    elseif GameState.modeSelect then
       
-    end
-  end
-  
-  if GameState.gameOver then
-    if mouseButton == 1 then
+      if x >= SinglePlayerButton.x - 112.5 and x <= SinglePlayerButton.x - 112.5 + SinglePlayerButton.width and y >= SinglePlayerButton.y and y <= SinglePlayerButton.y + SinglePlayerButton.height then
+        GameMode.singlePlayer = true
+        play()
+      end
+      
+      if x >= MultiPlayerButton.x - 112.5 and x <= MultiPlayerButton.x - 112.5 + MultiPlayerButton.width and y >= MultiPlayerButton.y and y <= MultiPlayerButton.y +
+MultiPlayerButton.height then
+        GameMode.multiPlayer = true
+        play()
+      end
+    elseif GameState.gameOver then
       
       if x >= RetryButton.x - 112.5 and x <= RetryButton.x - 112.5 + RetryButton.width and y >= RetryButton.y and y <= RetryButton.y + RetryButton.height then
         retry()
       end
-      
     end
-  end
-  
-  if not GameState.play and not GameState.modeSelect then
-    if mouseButton == 1 then
+    
+    if not GameState.play and not GameState.modeSelect then
       
       if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
         love.event.quit()
       end
       
     end
+  
   end
 end
