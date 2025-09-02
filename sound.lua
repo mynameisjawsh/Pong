@@ -14,6 +14,16 @@ function Sound:update()
     love.audio.stop()
     love.audio.play(self.HitPaddle1)
   end
+  
+  if checkPaddle(player2, Ball) then
+    love.audio.stop()
+    love.audio.play(self.HitPaddle2)
+  end
+  
+  if checkCeiling(Ball, Screen) then
+    love.audio.stop()
+    love.audio.play(self.HitCeiling)
+  end
 end
 
 
