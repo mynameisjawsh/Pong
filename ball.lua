@@ -19,10 +19,12 @@ end
 
 function Ball:collide()
   if checkCeiling(self, Screen) then
+    self.y = 0
     self.yVel = -self.yVel
   end
   
   if checkFloor(self, Screen) then
+    self.y = Screen.height - self.height
     self.yVel = -self.yVel
   end
   

@@ -35,7 +35,7 @@ function Paddle:collide()
     local middleBall = Ball.y + Ball.height / 2
     local middlePaddle = self.y + self.height / 2
     local collisionPosition = middleBall - middlePaddle
-    Ball.yVel = collisionPosition * 5
+    Ball.yVel = collisionPosition * 6
   end
 end
 
