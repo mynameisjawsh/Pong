@@ -5,7 +5,7 @@ function Ball:load()
   self.y = Screen.height / 2
   self.width = 20
   self.height = 20
-  self.speed = 200
+  self.speed = 225
   self.xVel = -self.speed 
   self.yVel = 0
 end
