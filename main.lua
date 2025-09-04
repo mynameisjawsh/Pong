@@ -32,26 +32,8 @@ function love.load()
   
   if GameState.boot then
     Start:load()
-    
-    PlayButton = Button.new(love.graphics.newFont(64), "Play", Screen.width / 2, Screen.height / 2, 225, 75)
-    ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
   elseif GameState.modeSelect then
     ModeSelect:load()
-    
-    SinglePlayerButton = Button.new(love.graphics.newFont(52), "1 Player", Screen.width / 2, Screen.height / 2, 225, 75)
-    MultiPlayerButton = Button.new(love.graphics.newFont(52), "2 Player", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
-  elseif GameState.play then
-    Arena:load()
-    
-    player1 = Paddle.new(50, Screen.height / 2, 20, 100, 500, 1)
-    player2 = Paddle.new(Screen.width - 70, Screen.height / 2, 20, 100, 500, 2)
-    
-    Ball:load()
-  else
-    GameOver:load()
-    
-    RetryButton = Button.new(love.graphics.newFont(64), "Retry", Screen.width / 2, Screen.height / 2, 225, 75)
-    ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
   end
 end
 
@@ -61,13 +43,6 @@ function love.update(dt)
     Start:update()
   elseif GameState.modeSelect then
     ModeSelect:update()
-  elseif GameState.play then
-    player1:update(dt)
-    player2:update(dt)
-    Ball:update(dt)
-    Sound:update()
-  else
-    GameOver:update()
   end
 end
 
@@ -75,21 +50,8 @@ end
 function love.draw()
   if GameState.boot then
     Start:draw()
-    PlayButton:draw()
-    ExitButton:draw()
   elseif GameState.modeSelect then
     ModeSelect:draw()
-    SinglePlayerButton:draw()
-    MultiPlayerButton:draw()
-  elseif GameState.play then
-    Arena:draw()
-    player1:draw()
-    player2:draw()
-    Ball:draw()
-  else
-    GameOver:draw()
-    RetryButton:draw()
-    ExitButton:draw()
   end
 end
 
