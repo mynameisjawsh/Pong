@@ -22,16 +22,6 @@ function Sound:update()
     love.audio.play(self.HitPaddle2)
   end
   
-  if checkCeiling(Ball, Screen) then
-    love.audio.stop()
-    love.audio.play(self.HitCeiling)
-  end
-  
-  if checkFloor(Ball, Screen) then
-    love.audio.stop()
-    love.audio.play(self.HitFloor)
-  end
-  
   if checkGoal(Ball, Screen) then
     if GameMode.multiPlayer then
       love.audio.stop()
@@ -50,6 +40,18 @@ function Sound:update()
     
     Ball:load()
   end
+end
+
+
+function Sound:hitFloor()
+  love.audio.stop()
+  love.audio.play(self.HitFloor)
+end
+
+
+function Sound:hitCeiling()
+  love.audio.stop()
+  love.audio.play(self.HitCeiling)
 end
 
 

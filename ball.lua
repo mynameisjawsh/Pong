@@ -19,11 +19,13 @@ end
 
 function Ball:collide()
   if checkCeiling(self, Screen) then
+    Sound:hitCeiling()
     self.y = 0
     self.yVel = -self.yVel
   end
   
   if checkFloor(self, Screen) then
+    Sound:hitFloor()
     self.y = Screen.height - self.height
     self.yVel = -self.yVel
   end
