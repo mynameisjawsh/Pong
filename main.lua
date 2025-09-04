@@ -4,6 +4,7 @@ require("sound")
 
 require("start")
 require("modeselect")
+require("play")
 require("gameover")
 
 require("arena")
@@ -34,6 +35,8 @@ function love.load()
     Start:load()
   elseif GameState.modeSelect then
     ModeSelect:load()
+  elseif GameState.play then
+    Play:load()
   end
 end
 
@@ -43,6 +46,8 @@ function love.update(dt)
     Start:update()
   elseif GameState.modeSelect then
     ModeSelect:update()
+  elseif GameState.play then
+    Play:update()
   end
 end
 
@@ -52,6 +57,8 @@ function love.draw()
     Start:draw()
   elseif GameState.modeSelect then
     ModeSelect:draw()
+  elseif GameState.play then
+    Play:draw()
   end
 end
 
