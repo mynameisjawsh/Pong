@@ -8,6 +8,8 @@ function Play:load()
   
   if GameMode.multiPlayer then
     Player2 = Paddle.new(Screen.width - 70, Screen.height / 2, 20, 100, 500, 2)
+  elseif GameMode.singlePlayer then
+    SinglePlayerAI:load()
   end
 end
 
@@ -19,6 +21,8 @@ function Play:update(dt)
   
   if GameMode.multiPlayer then
     Player2:update(dt)
+  elseif GameMode.singlePlayer then
+    SinglePlayerAI:update(dt)
   end
   
   Sound:update()
@@ -33,5 +37,7 @@ function Play:draw()
   
   if GameMode.multiPlayer then
     Player2:draw()
+  elseif GameMode.singlePlayer then
+    SinglePlayerAI:draw()
   end
 end

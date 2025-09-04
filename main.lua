@@ -9,6 +9,7 @@ require("gameover")
 
 require("arena")
 require("paddle")
+require("singleplayerai")
 require("ball")
 require("button")
 
