@@ -38,6 +38,8 @@ function love.load()
     ModeSelect:load()
   elseif GameState.play then
     Play:load()
+  elseif GameState.gameOver then
+    GameOver:load()
   end
 end
 
@@ -49,6 +51,8 @@ function love.update(dt)
     ModeSelect:update()
   elseif GameState.play then
     Play:update(dt)
+  elseif GameState.gameOver then
+    GameOver:update()
   end
 end
 
@@ -60,6 +64,8 @@ function love.draw()
     ModeSelect:draw()
   elseif GameState.play then
     Play:draw()
+  elseif GameState.gameOver then
+    GameOver:draw()
   end
 end
 
