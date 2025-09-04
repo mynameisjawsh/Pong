@@ -47,7 +47,7 @@ function love.update(dt)
   elseif GameState.modeSelect then
     ModeSelect:update()
   elseif GameState.play then
-    Play:update()
+    Play:update(dt)
   end
 end
 
