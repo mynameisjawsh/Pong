@@ -46,11 +46,7 @@ function Paddle:move(dt)
   end
   
   if self.player == 2 then
-    if GameMode.singlePlayer then
-      self:singlePlayerAI()
-    elseif GameMode.multiPlayer then
-      self:playerTwoControl(dt)
-    end
+    self:playerTwoControl(dt)
   end
 end
 
@@ -61,11 +57,6 @@ function Paddle:playerTwoControl(dt)
   elseif love.keyboard.isDown("down") then
     self.y = self.y + self.speed * dt
   end
-end
-
-
-function Paddle:singlePlayerAI()
-  self.y = Ball.y
 end
 
 
