@@ -42,24 +42,39 @@ end
 
 function Paddle:move(dt)
   if self.player == 1 then
-    if love.keyboard.isDown("w") then
-      self.y = self.y - self.speed * dt
-    elseif love.keyboard.isDown("s") then
-      self.y = self.y + self.speed * dt
-    end
+    self:playerOneControl(dt)
   end
   
   if self.player == 2 then
     if GameMode.singlePlayer then
-      self.y = Ball.y
+      self:singlePlayerAI()
     elseif GameMode.multiPlayer then
-      if love.keyboard.isDown("up") then
-        self.y = self.y - self.speed * dt
-      elseif love.keyboard.isDown("down") then
-        self.y = self.y + self.speed * dt
-      end
+      self:playerTwoControl(dt)
     end
   end
+end
+
+
+function Paddle:playerTwoControl(dt)
+  if love.keyboard.isDown("up") then
+    self.y = self.y - self.speed * dt
+  elseif love.keyboard.isDown("down") then
+    self.y = self.y + self.speed * dt
+  end
+end
+
+
+function Paddle:singlePlayerAI()
+  self.y = Ball.y
+end
+
+
+function Paddle:playerOneControl(dt)
+  if love.keyboard.isDown("w") then
+      self.y = self.y - self.speed * dt
+    elseif love.keyboard.isDown("s") then
+      self.y = self.y + self.speed * dt
+    end
 end
 
 
