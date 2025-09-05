@@ -114,7 +114,7 @@ MultiPlayerButton.height then
       end
     end
     
-    if not GameState.play and not GameState.modeSelect then
+    if not GameState.play and not GameState.modeSelect and not GameState.difficultySelect then
       
       if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
         love.event.quit()
