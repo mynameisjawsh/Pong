@@ -14,22 +14,18 @@ end
 
 
 function SinglePlayerAI:update(dt)
-  self.y = self.y + self.yVel * dt
+  self:move(dt)
+  self:collide()
   
   self.timer = self.timer + dt
   if self.timer > self.rate then
     self.timer = 0
-    
-    if Ball.y < self.y then
-      self.yVel = -self.speed
-    elseif Ball.y > self.y + self.height then
-      self.yVel = self.speed 
-    else
-      self.yVel = 0
-    end
-    
+    self:predictBall()
   end
-  
+end
+
+
+function SinglePlayerAI:collide()
   if checkCeiling(self, Screen) then
     self.y = 0
   end
@@ -45,6 +41,22 @@ function SinglePlayerAI:update(dt)
     local collisionPosition = middleBall - middlePaddle
     Ball.yVel = collisionPosition * 6
   end
+end
+
+
+function SinglePlayerAI:predictBall()
+  if Ball.y < self.y then
+      self.yVel = -self.speed
+    elseif Ball.y > self.y + self.height then
+      self.yVel = self.speed 
+    else
+      self.yVel = 0
+    end
+end
+
+
+function SinglePlayerAI:move(dt)
+  self.y = self.y + self.yVel * dt
 end
 
 
