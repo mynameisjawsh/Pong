@@ -22,12 +22,18 @@ Screen.height = love.graphics.getHeight()
 GameState = {}
 GameState.boot = true
 GameState.modeSelect = false
+GameState.difficultySelect = false
 GameState.play = false
 GameState.gameOver = false
 
 GameMode = {}
 GameMode.singlePlayer = false
 GameMode.multiPlayer = false
+
+GameDifficulty = {}
+GameDifficulty.easy = false
+GameDifficulty.normal = false
+GameDifficulty.hard = false
 
 function love.load()
   Sound:load()
