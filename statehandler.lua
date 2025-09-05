@@ -7,6 +7,20 @@ function checkState()
 end
 
 
+function goToMenu()
+  if GameState.gameOver then
+    GameState.gameOver = false
+    GameState.boot = true
+    GameMode.singlePlayer = false
+    GameMode.multiPlayer = false
+    GameDifficulty.easy = false
+    GameDifficulty.normal = false
+    GameDifficulty.hard = false
+    love.load()
+  end
+end
+
+
 function retry()
   if GameState.gameOver then
     GameState.gameOver = false
@@ -19,6 +33,14 @@ end
 function play()
   if GameState.difficultySelect then
     GameState.difficultySelect = false
+    GameState.play = true
+    love.load()
+  end
+end
+
+function twoPlayer()
+  if GameState.modeSelect then
+    GameState.modeSelect = false
     GameState.play = true
     love.load()
   end

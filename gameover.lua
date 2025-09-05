@@ -10,7 +10,7 @@ function GameOver:load()
   
   RetryButton = Button.new(love.graphics.newFont(64), "Retry", Screen.width / 2, Screen.height / 2, 225, 75)
   MenuButton = Button.new(love.graphics.newFont(64), "Menu", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
-  ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 190, 225, 75)
+  ExitButton2 = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 190, 225, 75)
 end
 
 
@@ -30,5 +30,5 @@ function GameOver:draw()
   
   RetryButton:draw()
   MenuButton:draw()
-  ExitButton:draw()
+  ExitButton2:draw()
 end

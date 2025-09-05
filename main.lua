@@ -92,6 +92,10 @@ function love.mousepressed(x, y, mouseButton)
         Sound:clickButton()
         modeSelect()
       end
+      
+      if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
+        love.event.quit()
+      end
     elseif GameState.modeSelect then
       
       if x >= SinglePlayerButton.x - 112.5 and x <= SinglePlayerButton.x - 112.5 + SinglePlayerButton.width and y >= SinglePlayerButton.y and y <= SinglePlayerButton.y + SinglePlayerButton.height then
@@ -104,7 +108,7 @@ function love.mousepressed(x, y, mouseButton)
 MultiPlayerButton.height then
         GameMode.multiPlayer = true
         Sound:clickButton()
-        play()
+        twoPlayer()
       end
     elseif GameState.difficultySelect then
       
@@ -132,14 +136,15 @@ MultiPlayerButton.height then
         Sound:clickButton()
         retry()
       end
-    end
-    
-    if not GameState.play and not GameState.modeSelect and not GameState.difficultySelect then
       
-      if x >= ExitButton.x - 112.5 and x <= ExitButton.x - 112.5 + ExitButton.width and y >= ExitButton.y and y <= ExitButton.y + ExitButton.height then
-        love.event.quit()
+      if x >= MenuButton.x - 112.5 and x <= MenuButton.x - 112.5 + MenuButton.width and y >= MenuButton.y and y <= MenuButton.y + MenuButton.height then
+        Sound:clickButton()
+        goToMenu()
       end
       
+      if x >= ExitButton2.x - 112.5 and x <= ExitButton2.x - 112.5 + ExitButton2.width and y >= ExitButton2.y and y <= ExitButton2.y + ExitButton2.height then
+        love.event.quit()
+      end
     end
   
   end
