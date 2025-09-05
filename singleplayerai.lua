@@ -5,19 +5,27 @@ function SinglePlayerAI:load()
   self.y = Screen.height / 2
   self.width = 20
   self.height = 100
+  self.yVel = 0
   self.speed = 500
+  
+  self.timer = 0
+  self.rate = 0.5
 end
 
 
 function SinglePlayerAI:update(dt)
-  if Ball.xVel > 0 then
+  self.y = self.y + self.yVel * dt
+  
+  self.timer = self.timer + dt
+  if self.timer > self.rate then
+    self.timer = 0
     
-    if Ball.y < self.y + self.height / 2 then
-      self.y = self.y - self.speed * dt
-    end
-    
-    if Ball.y > self.y + self.height / 2 then
-      self.y = self.y + self.speed * dt
+    if Ball.y < self.y then
+      self.yVel = -self.speed
+    elseif Ball.y > self.y + self.height then
+      self.yVel = self.speed 
+    else
+      self.yVel = 0
     end
     
   end
