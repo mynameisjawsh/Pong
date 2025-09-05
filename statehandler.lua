@@ -32,3 +32,12 @@ function modeSelect()
     love.load()
   end
 end
+
+
+function difficultySelect()
+  if GameState.modeSelect then
+    GameState.modeSelect = false
+    GameState.difficultySelect = true
+    love.load()
+  end
+end

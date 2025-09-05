@@ -97,7 +97,7 @@ function love.mousepressed(x, y, mouseButton)
       if x >= SinglePlayerButton.x - 112.5 and x <= SinglePlayerButton.x - 112.5 + SinglePlayerButton.width and y >= SinglePlayerButton.y and y <= SinglePlayerButton.y + SinglePlayerButton.height then
         GameMode.singlePlayer = true
         Sound:clickButton()
-        play()
+        difficultySelect()
       end
       
       if x >= MultiPlayerButton.x - 112.5 and x <= MultiPlayerButton.x - 112.5 + MultiPlayerButton.width and y >= MultiPlayerButton.y and y <= MultiPlayerButton.y +
