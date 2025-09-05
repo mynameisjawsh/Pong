@@ -17,10 +17,17 @@ function Sound:update()
     love.audio.play(self.HitPaddle1)
   end
   
-  --if checkPaddle(player2, Ball) then
-    --love.audio.stop()
-    --love.audio.play(self.HitPaddle2)
-  --end
+  if GameMode.multiPlayer then
+    if checkPaddle(Player2, Ball) then
+      love.audio.stop()
+      love.audio.play(self.HitPaddle2)
+    end
+  elseif GameMode.singlePlayer then
+    if checkPaddle(SinglePlayerAI, Ball) then
+      love.audio.stop()
+      love.audio.play(self.HitPaddle2)
+    end
+  end
   
   if checkGoal(Ball, Screen) then
     if GameMode.multiPlayer then
