@@ -10,17 +10,19 @@ function Play:load()
     Player2 = Paddle.new(Screen.width - 70, Screen.height / 2, 20, 100, 500, 2)
   elseif GameMode.singlePlayer then
     SinglePlayerAI:load()
-    
-    if GameDifficulty.easy then
+    self:setDifficulty()
+  end
+end
+
+
+function Play:setDifficulty()
+  if GameDifficulty.easy then
       SinglePlayerAI.rate = 0.5
     elseif GameDifficulty.normal then
       SinglePlayerAI.rate = 0.4
     elseif GameDifficulty.hard then
       SinglePlayerAI.rate = 0.3
     end
-    
-    print(SinglePlayerAI.rate)
-  end
 end
 
 
