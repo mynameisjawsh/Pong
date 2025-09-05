@@ -17,8 +17,8 @@ end
 
 
 function play()
-  if GameState.modeSelect then
-    GameState.modeSelect = false
+  if GameState.difficultySelect then
+    GameState.difficultySelect = false
     GameState.play = true
     love.load()
   end
