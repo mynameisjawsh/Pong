@@ -110,19 +110,19 @@ MultiPlayerButton.height then
       
       if x >= EasyButton.x - 112.5 and x <= EasyButton.x - 112.5 + EasyButton.width and y >= EasyButton.y and y <= EasyButton.y + EasyButton.height then
         GameDifficulty.easy = true
-        print(GameDifficulty)
+        Sound:clickButton()
         play()
       end
       
       if x >= NormalButton.x - 112.5 and x <= NormalButton.x - 112.5 + NormalButton.width and y >= NormalButton.y and y <= NormalButton.y + NormalButton.height then
         GameDifficulty.normal = true
-        print(GameDifficulty)
+        Sound:clickButton()
         play()
       end
       
       if x >= HardButton.x - 112.5 and x <= HardButton.x - 112.5 + HardButton.width and y >= HardButton.y and y <= HardButton.y + HardButton.height then
         GameDifficulty.hard = true
-        print(GameDifficulty)
+        Sound:clickButton()
         play()
       end
       
