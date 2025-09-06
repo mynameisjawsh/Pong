@@ -1,5 +1,7 @@
 Button = {}
 
+Button.textOffset = 56.26
+
 function Button.new(font, text, x, y, width, height)
   local instance = {}
   setmetatable(instance, { __index = Button })
@@ -21,5 +23,5 @@ function Button:draw()
   
   love.graphics.setColor(0, 0, 0)
   love.graphics.setFont(self.font)
-  love.graphics.print(self.text, self.x - 56.25, self.y)
+  love.graphics.print(self.text, self.x - self.textOffset, self.y)
 end

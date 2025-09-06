@@ -8,6 +8,8 @@ function Start:load()
     y = 100
   }
   
+  Button.textOffset = 56.26
+  
   PlayButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Play", Screen.width / 2, Screen.height / 2, 225, 75)
   ExitButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
 end

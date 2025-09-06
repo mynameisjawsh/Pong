@@ -2,15 +2,15 @@ DifficultySelect = {}
 
 function DifficultySelect:load()
   Message = {
-    font = love.graphics.newFont(128),
-    text = "Select Difficulty:",
+    font = love.graphics.newFont(TitleFont, 128),
+    text = "SELECT DIFFICULTY:",
     x = 100,
     y = 100
   }
   
-  EasyButton = Button.new(love.graphics.newFont(64), "Easy", Screen.width / 2, Screen.height / 2, 230, 75)
-  NormalButton = Button.new(love.graphics.newFont(64), "Normal", Screen.width / 2, Screen.height / 2 + 95, 230, 75)
-  HardButton = Button.new(love.graphics.newFont(64), "Hard", Screen.width / 2, Screen.height / 2 + 190, 230, 75)
+  EasyButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Easy", Screen.width / 2, Screen.height / 2, 230, 75)
+  NormalButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Normal", Screen.width / 2, Screen.height / 2 + 95, 230, 75)
+  HardButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Hard", Screen.width / 2, Screen.height / 2 + 190, 230, 75)
 end
 
 

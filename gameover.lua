@@ -2,15 +2,15 @@ GameOver = {}
 
 function GameOver:load()
   Message = {
-    font = love.graphics.newFont(128),
+    font = love.graphics.newFont(TitleFont, 128),
     text = " ",
     x = 100,
     y = 100
   }
   
-  RetryButton = Button.new(love.graphics.newFont(64), "Retry", Screen.width / 2, Screen.height / 2, 225, 75)
-  MenuButton = Button.new(love.graphics.newFont(64), "Menu", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
-  ExitButton2 = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 190, 225, 75)
+  RetryButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Retry", Screen.width / 2, Screen.height / 2, 225, 75)
+  MenuButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Menu", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
+  ExitButton2 = Button.new(love.graphics.newFont(ButtonFont, 128), "Exit", Screen.width / 2, Screen.height / 2 + 190, 225, 75)
   
   if GameMode.singlePlayer then
     if ScoreBoard.playerOneScore > ScoreBoard.playerTwoScore then
@@ -26,9 +26,9 @@ end
 
 function GameOver:update()
   if ScoreBoard.playerOneScore > ScoreBoard.playerTwoScore then
-    Message.text = "Player One wins!"
+    Message.text = "PLAYER ONE WINS!"
   else
-    Message.text = "Player Two wins!"
+    Message.text = "PLAYER TWO WINS!"
   end
 end
 
