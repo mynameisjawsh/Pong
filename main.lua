@@ -36,6 +36,9 @@ GameDifficulty.easy = false
 GameDifficulty.normal = false
 GameDifficulty.hard = false
 
+TitleFont = "Assets/Fonts/Championship.ttf"
+ButtonFont = "Assets/Fonts/game_over.ttf"
+
 function love.load()
   Sound:load()
   

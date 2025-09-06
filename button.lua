@@ -21,5 +21,5 @@ function Button:draw()
   
   love.graphics.setColor(0, 0, 0)
   love.graphics.setFont(self.font)
-  love.graphics.print(self.text, self.x - 112.5, self.y)
+  love.graphics.print(self.text, self.x - 56.25, self.y)
 end

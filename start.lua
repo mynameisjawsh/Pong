@@ -2,14 +2,14 @@ Start = {}
 
 function Start:load()
   Title = {
-    font = love.graphics.newFont("Assets/Fonts/Championship.ttf", 128),
+    font = love.graphics.newFont(TitleFont, 128),
     text = "PONG",
     x = Screen.width / 2,
     y = 100
   }
   
-  PlayButton = Button.new(love.graphics.newFont(64), "Play", Screen.width / 2, Screen.height / 2, 225, 75)
-  ExitButton = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
+  PlayButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Play", Screen.width / 2, Screen.height / 2, 225, 75)
+  ExitButton = Button.new(love.graphics.newFont(ButtonFont, 128), "Exit", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
 end
 
 
