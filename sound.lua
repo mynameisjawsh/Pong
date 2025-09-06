@@ -54,7 +54,6 @@ function Sound:update()
 end
 
 
-<<<<<<< HEAD
 function Sound:hitFloor()
   love.audio.stop()
   love.audio.play(self.HitFloor)
@@ -64,7 +63,8 @@ end
 function Sound:hitCeiling()
   love.audio.stop()
   love.audio.play(self.HitCeiling)
-=======
+
+
 function Sound:loseGame()
   love.audio.stop()
   love.audio.play(self.LoseGame)
@@ -80,7 +80,6 @@ end
 function Sound:startGame()
   love.audio.stop()
   love.audio.play(self.StartGame)
->>>>>>> soundImp
 end
 
 
