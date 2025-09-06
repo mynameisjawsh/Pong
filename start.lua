@@ -2,8 +2,8 @@ Start = {}
 
 function Start:load()
   Title = {
-    font = love.graphics.newFont(128),
-    text = "Pong",
+    font = love.graphics.newFont("Assets/Fonts/Championship.ttf", 128),
+    text = "PONG",
     x = Screen.width / 2,
     y = 100
   }
