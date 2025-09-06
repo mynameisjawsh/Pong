@@ -8,6 +8,10 @@ function Sound:load()
   self.ClickButton = love.audio.newSource("Assets/Sounds/Exports/ClickButton.wav", "static")
   self.Goal1 = love.audio.newSource("Assets/Sounds/Exports/Goal1.wav", "static")
   self.Goal2 = love.audio.newSource("Assets/Sounds/Exports/Goal2.wav", "static")
+  
+  self.StartGame = love.audio.newSource("Assets/Music/Exports/StartGame.wav")
+  self.WinGame = love.audio.newSource("Assets/Music/Exports/WinGame.wav")
+  self.LoseGame = love.audio.newSource("Assets/Music/Exports/LoseGame.wav")
 end
 
 
