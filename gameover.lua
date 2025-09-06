@@ -11,6 +11,16 @@ function GameOver:load()
   RetryButton = Button.new(love.graphics.newFont(64), "Retry", Screen.width / 2, Screen.height / 2, 225, 75)
   MenuButton = Button.new(love.graphics.newFont(64), "Menu", Screen.width / 2, Screen.height / 2 + 95, 225, 75)
   ExitButton2 = Button.new(love.graphics.newFont(64), "Exit", Screen.width / 2, Screen.height / 2 + 190, 225, 75)
+  
+  if GameMode.singlePlayer then
+    if ScoreBoard.playerOneScore > ScoreBoard.playerTwoScore then
+      Sound:winGame()
+    else
+      Sound:loseGame()
+    end
+  elseif GameMode.multiPlayer then
+    Sound:winGame()
+  end
 end
 
 

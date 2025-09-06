@@ -35,17 +35,20 @@ function Sound:update()
   
   if checkGoal(Ball, Screen) then
     if GameMode.multiPlayer then
-      love.audio.stop()
-      love.audio.play(self.Goal1)
+      if ScoreBoard.playerOneScore <= 9 and ScoreBoard.playerTwoScore <= 9 then
+        love.audio.play(self.Goal1)
+      end
     end
     
     if GameMode.singlePlayer then
-      love.audio.stop()
-      
       if Ball.x + Ball.width < Screen.x then
-        love.audio.play(self.Goal2)
+        if ScoreBoard.playerTwoScore <= 9 then
+          love.audio.play(self.Goal2)
+        end
       elseif Ball.x > Screen.x + Screen.width then
-        love.audio.play(self.Goal1)
+        if ScoreBoard.playerOneScore <= 9 then
+          love.audio.play(self.Goal1)
+        end
       end
     end
     
@@ -67,13 +70,11 @@ end
 
 
 function Sound:loseGame()
-  love.audio.stop()
   love.audio.play(self.LoseGame)
 end
 
 
 function Sound:winGame()
-  love.audio.stop()
   love.audio.play(self.WinGame)
 end
 
