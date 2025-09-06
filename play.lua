@@ -12,6 +12,8 @@ function Play:load()
     SinglePlayerAI:load()
     self:setDifficulty()
   end
+  
+  Sound:startGame()
 end
 
 

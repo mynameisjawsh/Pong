@@ -63,6 +63,7 @@ end
 function Sound:hitCeiling()
   love.audio.stop()
   love.audio.play(self.HitCeiling)
+end
 
 
 function Sound:loseGame()
